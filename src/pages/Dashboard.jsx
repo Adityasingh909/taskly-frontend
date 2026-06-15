@@ -12,7 +12,7 @@ function Dashboard({ darkMode, setDarkMode }) {
     const [task,setTask]= useState([])
     const [card, setCard] = useState(false);
     const [editTask, setEditTask] = useState(null);
-    
+
     const deletetask = async(id) => {
         //   console.log("Deleting:", id);
         try {
