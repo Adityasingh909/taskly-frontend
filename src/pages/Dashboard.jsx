@@ -1,5 +1,5 @@
 import React from 'react'
-import Todocard from '../components/Todocard'
+import TodoCard from '../components/TodoCard'
 import Navbar from '../components/Navbar'
 import { useState,useEffect } from 'react'
 import axios from 'axios'
@@ -99,7 +99,7 @@ function Dashboard({ darkMode, setDarkMode }) {
                         
                      {
                         task.map((todo)=>(
-                            <Todocard
+                            <TodoCard
                              key={todo._id}
                                 task={todo}
                                 deletetask={deletetask}

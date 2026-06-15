@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Todocard({ task, deletetask,setEditTask,setCard }) {
+function TodoCard({ task, deletetask,setEditTask,setCard }) {
     console.log(task);
 
     return (
@@ -51,4 +51,4 @@ function Todocard({ task, deletetask,setEditTask,setCard }) {
     )
 }
 
-export default Todocard
+export default TodoCard
