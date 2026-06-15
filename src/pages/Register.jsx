@@ -30,7 +30,7 @@ async function submitHandler(event) {
     try {
         // console.log(formdata);
         const response = await axios.post(
-            `http://${BASE_URL}/api/v1/signup`,
+            `${BASE_URL}/api/v1/signup`,
             formdata
  
         );

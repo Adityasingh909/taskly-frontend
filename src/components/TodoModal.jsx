@@ -25,7 +25,7 @@ function TodoModal({setCard,fetchTask,task}) {
                 let response;
                 if(task){
                    response = await axios.put(
-                         `http://${BASE_URL}/api/v1/updatetask/${task._id}`,
+                         `${BASE_URL}/api/v1/updatetask/${task._id}`,
                         tododata,
                         {
                             headers:{
@@ -38,7 +38,7 @@ function TodoModal({setCard,fetchTask,task}) {
                 else{
 
                     response = await axios.post(
-                        `http://${BASE_URL}/api/v1/addtask`,
+                        `${BASE_URL}/api/v1/addtask`,
                         tododata,
                         {
                             headers:{

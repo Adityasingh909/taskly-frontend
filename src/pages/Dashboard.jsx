@@ -19,7 +19,7 @@ function Dashboard({ darkMode, setDarkMode }) {
         const token = localStorage.getItem("token")
         await axios.delete(
            
-            `http://${BASE_URL}/api/v1/deletetask/${id}`
+            `${BASE_URL}/api/v1/deletetask/${id}`
             ,
             {
                 headers:{
@@ -43,7 +43,7 @@ function Dashboard({ darkMode, setDarkMode }) {
         try{
             const token = localStorage.getItem("token");
             const response = await axios.get(
-                `http://${BASE_URL}/api/v1/tasks`,
+                `${BASE_URL}/api/v1/tasks`,
                 {
                     headers:{
                         Authorization:`Bearer ${token}`

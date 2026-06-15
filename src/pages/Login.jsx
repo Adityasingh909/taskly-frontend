@@ -26,7 +26,7 @@ function Login() {
         try {
             console.log(formdata);
             const response = await axios.post(
-                `http://${BASE_URL}/api/v1/login`,
+                `${BASE_URL}/api/v1/login`,
                 formdata
 
             );
