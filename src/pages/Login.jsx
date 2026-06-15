@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 import toast from "react-hot-toast";
-
+const BASE_URL = import.meta.env.VITE_BASE_URL;
 function Login() {
     const { setUser } = useContext(AuthContext);
 
@@ -26,7 +26,7 @@ function Login() {
         try {
             console.log(formdata);
             const response = await axios.post(
-                "http://localhost:3000/api/v1/login",
+                `http://${BASE_URL}/api/v1/login`,
                 formdata
 
             );

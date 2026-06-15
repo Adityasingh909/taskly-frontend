@@ -2,6 +2,7 @@ import axios from 'axios';
 import React from 'react'
 import { useState } from 'react'
 import toast from 'react-hot-toast';
+const BASE_URL = import.meta.env.VITE_BASE_URL;
 function TodoModal({setCard,fetchTask,task}) {
     const [tododata,setTododata]= useState({
         title : task?.title || "",
@@ -24,7 +25,7 @@ function TodoModal({setCard,fetchTask,task}) {
                 let response;
                 if(task){
                    response = await axios.put(
-                         `http://localhost:3000/api/v1/updatetask/${task._id}`,
+                         `http://${BASE_URL}/api/v1/updatetask/${task._id}`,
                         tododata,
                         {
                             headers:{
@@ -37,7 +38,7 @@ function TodoModal({setCard,fetchTask,task}) {
                 else{
 
                     response = await axios.post(
-                        "http://localhost:3000/api/v1/addtask",
+                        `http://${BASE_URL}/api/v1/addtask`,
                         tododata,
                         {
                             headers:{
@@ -61,7 +62,7 @@ function TodoModal({setCard,fetchTask,task}) {
         }
         catch(error){
             console.log(error);
-            
+
             
         }
     }

@@ -6,7 +6,7 @@ import axios from 'axios'
 import TodoModal from '../components/TodoModal'
 import toast from 'react-hot-toast'
 
-
+const BASE_URL = import.meta.env.VITE_BASE_URL;
  
 function Dashboard({ darkMode, setDarkMode }) {
     const [task,setTask]= useState([])
@@ -19,7 +19,7 @@ function Dashboard({ darkMode, setDarkMode }) {
         const token = localStorage.getItem("token")
         await axios.delete(
            
-            `http://localhost:3000/api/v1/deletetask/${id}`
+            `http://${BASE_URL}/api/v1/deletetask/${id}`
             ,
             {
                 headers:{
@@ -43,7 +43,7 @@ function Dashboard({ darkMode, setDarkMode }) {
         try{
             const token = localStorage.getItem("token");
             const response = await axios.get(
-                "http://localhost:3000/api/v1/tasks",
+                `http://${BASE_URL}/api/v1/tasks`,
                 {
                     headers:{
                         Authorization:`Bearer ${token}`
